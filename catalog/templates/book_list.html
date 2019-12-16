@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h1>Book List</h1>
+    {% if user.is_staff %}
+        <h6><a href="{% url 'book-create' %}">Add book to library</a></h6>
+    {% endif %}
+    {% if book_list %}
+        <ul>
+            {% for book in book_list %}
+                <li>
+                    <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{ book.author }})
+                    {% if user.is_staff %}
+                        <button><a href="{% url 'book-update' pk=book.id %}">Update data</a></button>
+                        <button><a href="{% url 'book-delete' pk=book.id %}">Remove book</a></button>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

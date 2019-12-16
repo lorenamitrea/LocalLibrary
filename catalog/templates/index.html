@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+    <h3>Welcome to our Local Library</h3>
+
+    <p>The library has the following record counts:</p>
+    <ul>
+        <li>Number of visits: {{ num_visits }}</li>
+        <li><strong>Books: </strong>{{ num_books }}</li>
+        <li><strong>Authors: </strong>{{ num_authors }}</li>
+        <li><strong>Copies: </strong>{{ num_instances }}</li>
+        <li><strong>Copies Available: </strong>{{ num_instances_available }}</li>
+        <li><strong>Copies on Loan: </strong>{{ num_instances_loned }}</li>
+        <li><em>Custom Books: </em>{{ num_books_c }}</li>
+        <li><em>Custom Genres: </em>{{ num_genre_c }}</li>
+    </ul>
+{% endblock %}
