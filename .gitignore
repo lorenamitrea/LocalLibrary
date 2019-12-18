@@ -134,6 +134,4 @@ dmypy.json
 # Database
 *.sqlite3
 
-LocalLibrary/
-
 .idea/
